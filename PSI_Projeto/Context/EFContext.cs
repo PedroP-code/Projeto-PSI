@@ -9,8 +9,13 @@ namespace PSI_Projeto.Context
 {
     public class EFContext : DbContext  
     {
-        public EFContext () : base("Empresa") {}
+
+        public EFContext () : base("Empresa") {
+            Database.SetInitializer<EFContext>(
+            new DropCreateDatabaseIfModelChanges<EFContext>());
+        }
         public DbSet<Fabricante> Fabricantes { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
     }
 }
