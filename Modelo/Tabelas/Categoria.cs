@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Modelo.Cadastro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PSI_Projeto.Models
+namespace Modelo.Tabelas
 {
     public class Categoria
     {

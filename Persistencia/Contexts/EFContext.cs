@@ -1,11 +1,13 @@
-﻿using PSI_Projeto.Models;
+﻿using Modelo.Cadastro;
+using Modelo.Tabelas;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
-namespace PSI_Projeto.Context
+namespace Persistencia.Contexts
 {
     public class EFContext : DbContext  
     {
@@ -17,5 +19,11 @@ namespace PSI_Projeto.Context
         public DbSet<Fabricante> Fabricantes { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
 }

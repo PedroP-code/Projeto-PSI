@@ -1,5 +1,6 @@
 ﻿using PSI_Projeto.Context;
-using PSI_Projeto.Models;
+using Modelo.Cadastro;
+using Modelo.Tabelas;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PSI_Projeto.Models
+namespace Modelo.Cadastro
 {
     public class Fabricante
     {
