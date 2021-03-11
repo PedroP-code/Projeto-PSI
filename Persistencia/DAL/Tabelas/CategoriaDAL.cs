@@ -2,10 +2,12 @@
 using Persistencia.Contexts;
 using System.Collections.Generic;
 using System.Text;
+using Modelo.Tabelas;
+using System.Linq;
 
 namespace Persistencia.DAL.Tabelas
 {
-    class CategoriaDAL
+    public class CategoriaDAL
     {
             private EFContext context = new EFContext();
             public IQueryable<Categoria> ObterCategoriasClassificadasPorNome()
