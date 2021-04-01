@@ -26,3 +26,17 @@ C:\Users\pedro\source\repos\WebApplicationTII-Cap05\Servico\obj\Debug\Servico.cs
 C:\Users\pedro\source\repos\WebApplicationTII-Cap05\Servico\obj\Debug\Servico.csproj.CopyComplete
 C:\Users\pedro\source\repos\WebApplicationTII-Cap05\Servico\obj\Debug\Servico.dll
 C:\Users\pedro\source\repos\WebApplicationTII-Cap05\Servico\obj\Debug\Servico.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Servico.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Servico.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Modelo.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Persistencia.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\EntityFramework.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Modelo.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Persistencia.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Persistencia.dll.config
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\EntityFramework.xml
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.csprojAssemblyReference.cache
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.csproj.CopyComplete
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.pdb
