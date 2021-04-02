@@ -40,3 +40,4 @@ C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.csproj.CoreCom
 C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.csproj.CopyComplete
 C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.dll
 C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\obj\Debug\Servico.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Servico\bin\Debug\Servico.dll.config
