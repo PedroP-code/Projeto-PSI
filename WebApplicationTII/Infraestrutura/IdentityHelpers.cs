@@ -7,13 +7,18 @@ using System.Web.Mvc;
 
 namespace WebApplicationTII.Infraestrutura
 {
-    public class IdentityHelpers
+    public static class IdentityHelpers
     {
         public static MvcHtmlString GetUserName(this HtmlHelper html, string id)
         {
             GerenciadorUsuario mgr = HttpContext.Current.GetOwinContext().
             GetUserManager<GerenciadorUsuario>();
             return new MvcHtmlString(mgr.FindByIdAsync(id).Result.UserName);
+        }
+
+        public static MvcHtmlString GetAuthenticatedUser(this HtmlHelper html)
+        {
+            return new MvcHtmlString(HttpContext.Current.User.Identity.Name);
         }
     }
 }
