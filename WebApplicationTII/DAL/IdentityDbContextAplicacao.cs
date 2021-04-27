@@ -27,5 +27,7 @@ namespace WebApplicationTII.DAL
         {
             return new IdentityDbContextAplicacao();
         }
+
+        public System.Data.Entity.DbSet<WebApplicationTII.Areas.Seguranca.Models.UsuarioViewModel> UsuarioViewModels { get; set; }
     }
 }
