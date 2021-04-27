@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebApplicationTII.Areas.Seguranca.Data;
+using WebApplicationTII.Areas.Seguranca.Models;
 using WebApplicationTII.DAL;
 
 namespace WebApplicationTII.Infraestrutura
@@ -16,11 +16,12 @@ namespace WebApplicationTII.Infraestrutura
         public GerenciadorPapel(RoleStore<Papel> store) : base(store)
         {
         }
-        public static GerenciadorPapel Create(IdentityFactoryOptions
-        <GerenciadorPapel> options, IOwinContext context)
+
+        public static GerenciadorPapel Create(IdentityFactoryOptions<GerenciadorPapel> options, IOwinContext context)
         {
-            return new GerenciadorPapel(new RoleStore<Papel>
-            (context.Get<IdentityDbContextAplicacao>()));
+            IdentityDbContextAplicacao db = context.Get<IdentityDbContextAplicacao>();
+            GerenciadorPapel papelManager = new GerenciadorPapel(new RoleStore<Papel>(db));
+            return papelManager;
         }
     }
 }

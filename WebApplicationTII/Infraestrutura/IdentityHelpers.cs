@@ -11,8 +11,7 @@ namespace WebApplicationTII.Infraestrutura
     {
         public static MvcHtmlString GetUserName(this HtmlHelper html, string id)
         {
-            GerenciadorUsuario mgr = HttpContext.Current.GetOwinContext().
-            GetUserManager<GerenciadorUsuario>();
+            GerenciadorUsuario mgr = HttpContext.Current.GetOwinContext().GetUserManager<GerenciadorUsuario>();
             return new MvcHtmlString(mgr.FindByIdAsync(id).Result.UserName);
         }
 

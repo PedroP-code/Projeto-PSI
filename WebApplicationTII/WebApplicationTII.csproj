@@ -239,6 +239,19 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Areas\Cadastros\Views\web.config" />
     <Content Include="Areas\Tabelas\Views\web.config" />
+    <Content Include="Areas\Cadastros\Views\Fabricantes\Index.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabricantes\Create.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabricantes\Edit.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabricantes\Details.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabricantes\Delete.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Index.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Details.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Create.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Edit.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Delete.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\_PartialDetailsContentPanel.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\_PartialEditContentPanel.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\_PorFabricante.cshtml" />
     <Content Include="Areas\Seguranca\Views\web.config" />
     <Content Include="Areas\Seguranca\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Seguranca\Views\Admin\Create.cshtml" />
@@ -248,6 +261,13 @@
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Index.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categoria\Index.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categoria\Create.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categoria\Edit.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categoria\Details.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categoria\Delete.cshtml" />
+    <Content Include="Areas\Seguranca\Views\PapelAdmin\_PartialDetailsContentPanel.cshtml" />
+    <Content Include="Areas\Seguranca\Views\PapelAdmin\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -318,20 +338,17 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Cadastros\CadastrosAreaRegistration.cs" />
+    <Compile Include="Areas\Cadastros\Controllers\FabricantesController.cs" />
+    <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\PapelAdminController.cs" />
-    <Compile Include="Areas\Seguranca\Data\Papel.cs" />
-    <Compile Include="Areas\Seguranca\Data\SegurancaViewModels\LoginViewModel.cs" />
-    <Compile Include="Areas\Seguranca\Data\SegurancaViewModels\PapelEditModel.cs" />
-    <Compile Include="Areas\Seguranca\Data\SegurancaViewModels\PapelModificationModel.cs" />
-    <Compile Include="Areas\Seguranca\Data\SegurancaViewModels\UsuarioViewModel.cs" />
-    <Compile Include="Areas\Seguranca\Data\Usuario.cs" />
+    <Compile Include="Areas\Seguranca\Models\Papel.cs" />
+    <Compile Include="Areas\Seguranca\Models\SegurancaViewModels.cs" />
+    <Compile Include="Areas\Seguranca\Models\Usuario.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
-    <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\CategoriasController.cs" />
-    <Compile Include="Areas\Cadastros\Controllers\FabricantesController.cs" />
-    <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
+    <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
     <Compile Include="DAL\IdentityDbContextAplicacao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -345,26 +362,7 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Areas\Cadastros\Views\Fabricantes\Index.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Fabricantes\Create.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Fabricantes\Edit.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Fabricantes\Details.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Fabricantes\Delete.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\Index.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\Create.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\Edit.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\Details.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\Delete.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\_PorFabricante.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\_PartialDetailsContentPanel.cshtml" />
-    <Content Include="Areas\Tabelas\Views\Categoria\Index.cshtml" />
-    <Content Include="Areas\Tabelas\Views\Categoria\Create.cshtml" />
-    <Content Include="Areas\Tabelas\Views\Categoria\Edit.cshtml" />
-    <Content Include="Areas\Tabelas\Views\Categoria\Details.cshtml" />
-    <Content Include="Areas\Tabelas\Views\Categoria\Delete.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\_PorCategoria.cshtml" />
-    <Content Include="Areas\Cadastros\Views\Produtos\_PartialEditContentPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -374,15 +372,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Cadastros\Data\" />
+    <Folder Include="Areas\Cadastros\Models\" />
     <Folder Include="Areas\Cadastros\Views\Shared\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
-    <Folder Include="Areas\Tabelas\Data\" />
+    <Folder Include="Areas\Tabelas\Models\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />
     <Folder Include="Context\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Categoria\" />
+    <Folder Include="Views\Categorias\" />
     <Folder Include="Views\Fabricantes\" />
     <Folder Include="Views\Produtos\" />
   </ItemGroup>

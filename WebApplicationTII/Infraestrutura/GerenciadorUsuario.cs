@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebApplicationTII.Areas.Seguranca.Data;
+using WebApplicationTII.Areas.Seguranca.Models;
 using WebApplicationTII.DAL;
 
 namespace WebApplicationTII.Infraestrutura
@@ -14,9 +14,10 @@ namespace WebApplicationTII.Infraestrutura
     public class GerenciadorUsuario : UserManager<Usuario>
     {
         public GerenciadorUsuario(IUserStore<Usuario> store) : base(store)
-        { }
-        public static GerenciadorUsuario Create(
-        IdentityFactoryOptions<GerenciadorUsuario> options, IOwinContext context)
+        {
+        }
+
+        public static GerenciadorUsuario Create(IdentityFactoryOptions<GerenciadorUsuario> options, IOwinContext context)
         {
             IdentityDbContextAplicacao db = context.Get<IdentityDbContextAplicacao>();
             GerenciadorUsuario manager = new GerenciadorUsuario(new UserStore<Usuario>(db));

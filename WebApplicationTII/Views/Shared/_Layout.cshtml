@@ -1,4 +1,5 @@
 ﻿@using WebApplicationTII.Infraestrutura
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +13,12 @@
     <div class="container">
         <div class="row">
             <div class="page-header bg-danger">
-                <div>
-                    <h1>
-                        Desenvolvimento em ASP NET MVC
-                        <small class="text-danger">
-                            Utilizando o Bootstrap
-                        </small>
-                    </h1>
-                </div>
+                <h1>
+                    Desenvolvimento em ASP.NET MVC
+                    <small class="text-danger">
+                        Utilizando o Bootstrap
+                    </small>
+                </h1>
                 <div style="text-align:right;">
                     @{
                         if (Html.GetAuthenticatedUser().ToString() != "")
@@ -35,7 +34,7 @@
                     }
                 </div>
             </div>
-            </div>
+        </div>
         <div class="row">
             <div class="col-xs-3 col-md-3 bg-success">
                 <ul class="nav nav-pills nav-stacked">
@@ -44,23 +43,24 @@
                     <li id="liFabricantes" role="presentation">@Html.ActionLink("Fabricantes", "Index", "Fabricantes", new { Area = "Cadastros" }, null)</li>
                     <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index", "Produtos", new { Area = "Cadastros" }, null)</li>
                     <li id="liUsuarios" role="presentation">@Html.ActionLink("Usuários", "Index", "Admin", new { area = "Seguranca" }, null)</li>
+                    <li id="liPapel" role="presentation">@Html.ActionLink("Papeis", "Index", "PapelAdmin", new { area = "Seguranca" }, null)</li>
                 </ul>
-            </div>
-            <div class="col-xs-9 col-md-9">
-                <br />
-                @RenderBody()
-            </div>
-        </div> <br />
-        <div class="row">
-            <div class="col-xs-12 col-md-12 bg-danger">
-                <small>Layout com Bootstrap</small>
-            </div>
+        </div>
+        <div class="col-xs-9 col-md-9">
+            <br />
+            @RenderBody()
+        </div>
+    </div> <br />
+    <div class="row">
+        <div class="col-xs-12 col-md-12 bg-danger">
+            <small>Layout com Bootstrap</small>
         </div>
     </div>
-    <script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
-    <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
-    @RenderSection("ScriptPage", false);
+</div>
+<script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
+<script src="@Url.Content("~/scripts/bootstrap.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+@RenderSection("ScriptPage", false);
 </body>
 </html>

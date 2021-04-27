@@ -1,0 +1,42 @@
+﻿@using WebApplicationTII.Infraestrutura
+@using WebApplicationTII.Areas.Seguranca.Models
+@model PapelDetailsModel
+<div class="panel panel-primary">
+    <div class="panel-heading mt-5">
+        Visualizando detalhes de @Model.Papel.Name
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuários</th>
+                </tr>
+            </thead>
+            @if (Model.Membros.Count() == 0)
+            {
+                <tr>
+                    <td colspan="4" class="text-center">
+                        Sem usuários registrados
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (Usuario user in Model.Membros)
+                {
+                    <tr>
+                        <td>
+                            <p>
+                                @user.UserName
+                            </p>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <div class="panel-footer panel-info">
+        @Html.ActionLink("Alterar", "Edit", new { id = Model.Papel.Id }, new { @class = "btn btn-info" });
+        @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
+    </div>
+</div>

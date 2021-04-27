@@ -1,10 +1,13 @@
 ﻿@using WebApplicationTII.Infraestrutura
-@using WebApplicationTII.Areas.Seguranca.Data
+@using WebApplicationTII.Areas.Seguranca.Models
+
 @model IEnumerable<Papel>
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Listando os papéis registrados";
 }
+
 <div class="panel panel-primary">
     <div class="panel-heading">Papéis</div>
     <table class="table table-striped">
@@ -37,19 +40,17 @@
                         else
                         {
                             <p>
-                                @string.Join(", ", role.Users.Select
-                            (x => Html.GetUserName(x.UserId)))
-                            </p>                }
+                                @string.Join(", ", role.Users.Select(x => Html.GetUserName(x.UserId)))
+                            </p>}
                     </td>
                     <td>
-                        @using (Html.BeginForm("Delete", "PapelAdmin",
-                        new { id = role.Id }))
+                        @using (Html.BeginForm("Delete", "PapelAdmin", new { id = role.Id }))
                         {
-                            @Html.ActionLink("Alterar", "Edit", new { id = role.Id },
-                            new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("Alterar", "Edit", new { id = role.Id }, new { @class = "btn btn-primary btn-xs" })
                             <button class="btn btn-danger btn-xs" type="submit">
                                 Delete
                             </button>
+                            @Html.ActionLink("Detalhes", "Details", new { id = role.Id }, new { @class = "btn btn-info btn-xs" })
                         }
                     </td>
                 </tr>
@@ -57,5 +58,12 @@
         }
     </table>
 </div>
-@Html.ActionLink("Criar um novo papel", "Create", null,
-new { @class = "btn btn-primary" })
+@Html.ActionLink("Criar um novo papel", "Create", null, new { @class = "btn btn-primary" })
+@section ScriptPage {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liPapel').addClass("active");
+        });
+    </script>
+}

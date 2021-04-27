@@ -11,7 +11,6 @@ namespace WebApplicationTII.Areas.Tabelas.Controllers
 {
     public class CategoriaController : Controller
     {
-        //private EFContext context = new EFContext();
         private CategoriaServico categoriaServico = new CategoriaServico();
         // GET: Categoria
         public ActionResult Index()

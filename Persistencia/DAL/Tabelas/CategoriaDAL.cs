@@ -20,7 +20,7 @@ namespace Persistencia.DAL.Tabelas
 
         public Categoria ObterCategoriaPorId(long id)
         {
-            return context.Categorias.Where(c => c.CategoriaId == id).Include("Produtos.Fabricante").First();
+            return context.Categorias.Where(c => c.CategoriaId == id).First();
         }
 
         public void GravarCategoria(Categoria categoria)

@@ -14,6 +14,7 @@ namespace Persistencia.Migrations
             ContextKey = "Persistencia.Contexts.EFContext";
         }
 
+
         protected override void Seed(Persistencia.Contexts.EFContext context)
         {
             //  This method will be called after migrating to the latest version.

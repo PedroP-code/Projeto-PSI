@@ -7,14 +7,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
-using WebApplicationTII.Areas.Seguranca.Data;
-using WebApplicationTII.Areas.Seguranca.Data.SegurancaViewModels;
+using WebApplicationTII.Areas.Seguranca.Models;
 using WebApplicationTII.Infraestrutura;
 
 namespace WebApplicationTII.Areas.Seguranca.Controllers
 {
     public class AccountController : Controller
     {
+
         // Propriedades
         private IAuthenticationManager AuthManager
         {
@@ -23,20 +23,22 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+
         private GerenciadorUsuario UserManager
         {
             get
             {
-                return
-          HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
+                return HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
             }
         }
+
         // Metodos
         public ActionResult Login(string returnUrl)
         {
             ViewBag.returnUrl = returnUrl;
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel details, string returnUrl)
@@ -50,11 +52,9 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 }
                 else
                 {
-                    ClaimsIdentity ident = UserManager.CreateIdentity(user,
-                    DefaultAuthenticationTypes.ApplicationCookie);
+                    ClaimsIdentity ident = UserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                     AuthManager.SignOut();
-                    AuthManager.SignIn(new AuthenticationProperties
-                    { IsPersistent = false }, ident);
+                    AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
                     if (returnUrl == null)
                         returnUrl = "/Home";
                     return Redirect(returnUrl);

@@ -17,18 +17,20 @@ namespace Modelo.Cadastros
         [Required(ErrorMessage = "Informe o nome do produto")]
         public string Nome { get; set; }
 
+        [DataType(DataType.Date)]
         [DisplayName("Data de Cadastro")]
         [Required(ErrorMessage = "Informe a data de cadastro do produto")]
-        [DataType(DataType.Date)]
         public DateTime? DataCadastro { get; set; }
 
         [DisplayName("Categoria")]
-
         public long? CategoriaId { get; set; }
-        [DisplayName("Fabricante")]
 
+        [DisplayName("Fabricante")]
         public long? FabricanteId { get; set; }
+
+        [DisplayName("Categoria")]
         public Categoria Categoria { get; set; }
+        [DisplayName("Fabricante")]
         public Fabricante Fabricante { get; set; }
     }
 }

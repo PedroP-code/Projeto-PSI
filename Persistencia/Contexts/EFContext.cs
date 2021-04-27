@@ -17,6 +17,7 @@ namespace Persistencia.Contexts
             Database.SetInitializer<EFContext>(new
             MigrateDatabaseToLatestVersion<EFContext, Configuration>());
         }
+
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Fabricante> Fabricantes { get; set; }
         public DbSet<Produto> Produtos { get; set; }

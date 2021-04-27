@@ -6,39 +6,43 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplicationTII.Areas.Seguranca.Data;
-using WebApplicationTII.Areas.Seguranca.Data.SegurancaViewModels;
+using WebApplicationTII.Areas.Seguranca.Models;
 using WebApplicationTII.Infraestrutura;
 
 namespace WebApplicationTII.Areas.Seguranca.Controllers
 {
     public class AdminController : Controller
     {
+
         // Definição da Propriedade GerenciadorUsuario
         private GerenciadorUsuario GerenciadorUsuario
         {
             get
             {
-                return HttpContext.GetOwinContext().
-                GetUserManager<GerenciadorUsuario>();
+                return HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
             }
         }
+
+        // GET: Seguranca/Admin
+        [Authorize(Roles = "Admin")]
+        public ActionResult Index()
+        {
+            return View(GerenciadorUsuario.Users);
+        }
+
+
+        // GET: Seguranca/Admin/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         private void AddErrorsFromResult(IdentityResult result)
         {
             foreach (string error in result.Errors)
             {
                 ModelState.AddModelError("", error);
             }
-        }
-        // GET: Seguranca/Admin
-        [Authorize(Roles = "Administradores")]
-        public ActionResult Index()
-        {
-            return View(GerenciadorUsuario.Users);
-        }
-        public ActionResult Create()
-        {
-            return View();
         }
 
         [HttpPost]
@@ -53,7 +57,9 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 };
                 IdentityResult result = GerenciadorUsuario.Create(user, model.Senha);
                 if (result.Succeeded)
-                { return RedirectToAction("Index"); }
+                {
+                    return RedirectToAction("Index");
+                }
                 else
                 {
                     AddErrorsFromResult(result);
@@ -89,13 +95,16 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 Usuario usuario = GerenciadorUsuario.FindById(uvm.Id);
                 usuario.UserName = uvm.Nome;
                 usuario.Email = uvm.Email;
-                usuario.PasswordHash = GerenciadorUsuario.PasswordHasher.
-                HashPassword(uvm.Senha);
+                usuario.PasswordHash = GerenciadorUsuario.PasswordHasher.HashPassword(uvm.Senha);
                 IdentityResult result = GerenciadorUsuario.Update(usuario);
                 if (result.Succeeded)
-                { return RedirectToAction("Index"); }
+                {
+                    return RedirectToAction("Index");
+                }
                 else
-                { AddErrorsFromResult(result); }
+                {
+                    AddErrorsFromResult(result);
+                }
             }
             return View(uvm);
         }
@@ -128,8 +137,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 }
                 else
                 {
-                    return new HttpStatusCodeResult(
-                    HttpStatusCode.BadRequest);
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
             }
             else
@@ -137,5 +145,6 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 return HttpNotFound();
             }
         }
+
     }
 }

@@ -7,8 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplicationTII.Areas.Seguranca.Data;
-using WebApplicationTII.Areas.Seguranca.Data.SegurancaViewModels;
+using WebApplicationTII.Areas.Seguranca.Models;
 using WebApplicationTII.Infraestrutura;
 
 namespace WebApplicationTII.Areas.Seguranca.Controllers
@@ -19,14 +18,8 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
         {
             get
             {
-                return HttpContext.GetOwinContext().GetUserManager
-                <GerenciadorPapel>();
+                return HttpContext.GetOwinContext().GetUserManager<GerenciadorPapel>();
             }
-        }
-        // GET: Seguranca/PapelAdmin
-        public ActionResult Index()
-        {
-            return View(RoleManager.Roles);
         }
 
         private void AddErrorsFromResult(IdentityResult result)
@@ -36,13 +29,19 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 ModelState.AddModelError("", error);
             }
         }
+
         private GerenciadorUsuario UserManager
         {
             get
             {
-                return HttpContext.GetOwinContext().
-                GetUserManager<GerenciadorUsuario>();
+                return HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
             }
+        }
+
+        // GET: Seguranca/PapelAdmin
+        public ActionResult Index()
+        {
+            return View(RoleManager.Roles);
         }
 
         public ActionResult Create()
@@ -51,7 +50,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Required] string nome)
+        public ActionResult Create([Required]string nome)
         {
             if (ModelState.IsValid)
             {
@@ -73,8 +72,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
             Papel papel = RoleManager.FindById(id);
             string[] memberIDs = papel.Users.Select(x => x.UserId).ToArray();
             // Carrega usuários associados e usuários não associados
-            IEnumerable<Usuario> membros = UserManager.Users.Where
-            (x => memberIDs.Any(y => y == x.Id));
+            IEnumerable<Usuario> membros = UserManager.Users.Where(x => memberIDs.Any(y => y == x.Id));
             IEnumerable<Usuario> naoMembros = UserManager.Users.Except(membros);
             // Chama a visão
             return View(new PapelEditModel
@@ -84,14 +82,14 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 NaoMembros = naoMembros
             });
         }
+
         [HttpPost]
         public ActionResult Edit(PapelModificationModel model)
         {
             IdentityResult result;
             if (ModelState.IsValid)
             {
-                foreach (string userId in model.IdsParaAdicionar ?? new
-                string[] { })
+                foreach (string userId in model.IdsParaAdicionar ?? new string[] { })
                 {
                     result = UserManager.AddToRole(userId, model.NomePapel);
                     if (!result.Succeeded)
@@ -99,6 +97,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                     }
                 }
+
                 foreach (string userId in model.IdsParaRemover ?? new string[] { })
                 {
                     result = UserManager.RemoveFromRole(userId, model.NomePapel);
@@ -110,6 +109,20 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 return RedirectToAction("Index");
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
+        public ActionResult Details(string id)
+        {
+            Papel papel = RoleManager.FindById(id);
+            string[] memberIDs = papel.Users.Select(x => x.UserId).ToArray();
+            // Carrega usuários associados 
+            IEnumerable<Usuario> membros = UserManager.Users.Where(x => memberIDs.Any(y => y == x.Id));
+            // Chama a visão
+            return View(new PapelDetailsModel
+            {
+                Papel = papel,
+                Membros = membros,
+            });
         }
     }
 }
