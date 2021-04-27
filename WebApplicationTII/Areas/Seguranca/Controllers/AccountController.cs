@@ -52,21 +52,23 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                 }
                 else
                 {
-                    ClaimsIdentity ident = UserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    ClaimsIdentity ident = UserManager.CreateIdentity(user,
+                    DefaultAuthenticationTypes.ApplicationCookie);
                     AuthManager.SignOut();
-                    AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
+                    AuthManager.SignIn(new AuthenticationProperties
+                    { IsPersistent = false }, ident);
                     if (returnUrl == null)
-                        returnUrl = "/Home";
+                        returnUrl = "/Index";
                     return Redirect(returnUrl);
                 }
             }
             return View(details);
         }
-
+  
         public ActionResult Logout()
-        {
-            AuthManager.SignOut();
-            return RedirectToAction("Index", "Home", new { area = "" });
+            {
+                AuthManager.SignOut();
+                return RedirectToAction("Index", "Index", new { area = "" });
+            }
         }
-    }
 }

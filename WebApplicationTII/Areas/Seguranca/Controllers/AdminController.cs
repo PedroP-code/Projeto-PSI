@@ -24,7 +24,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
         }
 
         // GET: Seguranca/Admin
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(GerenciadorUsuario.Users);

@@ -40,3 +40,17 @@ C:\Users\pedro\Downloads\WebApplicationTII-Cap07\Persistencia\obj\Debug\Persiste
 C:\Users\pedro\Downloads\WebApplicationTII-Cap07\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\pedro\Downloads\WebApplicationTII-Cap07\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\pedro\Downloads\WebApplicationTII-Cap07\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\Persistencia.dll.config
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\Modelo.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\Modelo.pdb
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.xml
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.pdb
