@@ -58,7 +58,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
                     AuthManager.SignIn(new AuthenticationProperties
                     { IsPersistent = false }, ident);
                     if (returnUrl == null)
-                        returnUrl = "/Index";
+                        returnUrl = "/Tabelas/Categoria";
                     return Redirect(returnUrl);
                 }
             }
@@ -68,7 +68,7 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
         public ActionResult Logout()
             {
                 AuthManager.SignOut();
-                return RedirectToAction("Index", "Index", new { area = "" });
+                return RedirectToAction("Index", "Categoria", new { area = "Tabelas" });
             }
         }
 }
