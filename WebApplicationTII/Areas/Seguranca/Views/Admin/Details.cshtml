@@ -1,0 +1,56 @@
+﻿@model WebApplicationTII.Areas.Seguranca.Models.UsuarioViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Visualizando o USUÁRIO @Html.DisplayFor(model => model.Nome)
+    </div>
+
+<div class="panel-body">
+    <dl class="dl-horizontal form-horizontal">
+        <div class="form-group">
+            <dt class="control-label col-md-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class="form-control">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+        </div>
+
+        <div class="form-group">
+            <dt class="control-label col-md-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="form-control">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </div>
+
+        <div class="form-group">
+            <dt class="control-label col-md-2">
+                @Html.DisplayNameFor(model => model.Senha)
+            </dt>
+
+            <dd class="form-control">
+                @Html.DisplayFor(model => model.Senha)
+            </dd>
+        </div>
+    </dl>
+</div>
+<div class="panel-footer panel-info">
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
+</div>
+</div>
+@section ScriptPage {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liUsuario').addClass("active");
+        });
+    </script>
+}

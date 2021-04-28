@@ -54,3 +54,17 @@ C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.cspr
 C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\pedro\Source\Repos\Projeto-PSI\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\Persistencia.dll.config
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.dll
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\Modelo.dll
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\Modelo.pdb
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.xml
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\pdani\Documents\Projeto-PSI\Persistencia\obj\Debug\Persistencia.pdb

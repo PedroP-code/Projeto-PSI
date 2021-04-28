@@ -108,7 +108,25 @@ namespace WebApplicationTII.Areas.Seguranca.Controllers
             }
             return View(uvm);
         }
-
+        public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            // inicia o objeto usuário para visão
+            var uvm = new UsuarioViewModel();
+            uvm.Id = usuario.Id;
+            uvm.Nome = usuario.UserName;
+            uvm.Email = usuario.Email;
+            return View(uvm);
+        }
         public ActionResult Delete(string id)
         {
             if (id == null)
